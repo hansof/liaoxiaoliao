@@ -1,0 +1,231 @@
+@charset "utf-8";
+/* CSS Document */
+
+body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #fff;
+}
+
+#app {
+    width: 100%;
+    height: 100%;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-family: "SF Pro SC", "SF Pro Display", "SF Pro Icons", "PingFang SC", "Helvetica Neue", "Helvetica", "microsoft yahei", "Arial", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+input {
+    outline: none;
+    border: 0px;
+    -webkit-user-select: auto;
+    -khtml-user-select: auto;
+    -moz-user-select: auto;
+    -ms-user-select: auto;
+    user-select: auto;
+}
+
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    background: #fff;
+}
+
+textarea {
+    -webkit-user-select: text;
+    -khtml-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+    -webkit-appearance: none;
+    -webkit-text-size-adjust: none
+}
+
+ul, ol {
+    list-style: none;
+}
+
+em, i {
+    font-style: normal;
+}
+
+img {
+    display: block;
+    width: 100%;
+    border: none;
+}
+
+input, textarea {
+    outline: none
+}
+
+div, nav, ul, li, span, em, a, img {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.clear {
+    width: 0;
+    clear: both;
+}
+
+.clearFix {
+    zoom: 1;
+}
+
+/* 1px
+*左边的边框retinabl，右边的边框retinabr，上边框retinabt，下边框retinabb，边框retinab用的时候直接饮用这个class就中
+*/
+
+.retinabt, .retinabb, .retinabl, .retinabr, .retinab {
+    position: relative;
+}
+
+.retinabt:before, .retinabb:after {
+    pointer-events: none;
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 1px;
+    background: rgb(236, 236, 236);
+    left: 0;
+    right: 0
+}
+
+.retinabt:before {
+    top: 0
+}
+
+.retinabb:after {
+    bottom: 0
+}
+
+.retinabl:before, .retinabr:after {
+    pointer-events: none;
+    position: absolute;
+    content: "";
+    width: 1px;
+    height: 100%;
+    background: rgb(236, 236, 236);
+    top: 0;
+    bottom: 0
+}
+
+.retinabl:before {
+    left: 0
+}
+
+.retinabr:after {
+    right: 0
+}
+
+.retinab:after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgb(236, 236, 236);
+    pointer-events: none
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 3) {
+    .retinabt:before, .retinabb:after {
+        -webkit-transform: scaleY(.3334);
+        transform: scaleY(.3334)
+    }
+    .retinabl:before, .retinabr:after {
+        -webkit-transform: scaleX(.3334);
+        transform: scaleX(.3334)
+    }
+    .retinab:after {
+        width: 300%;
+        height: 300%;
+        -webkit-transform: scale(.3334);
+        transform: scale(.3334)
+    }
+    .retinabt:before, .retinabl:before, .retinab:after {
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0
+    }
+    .retinabb:after, .retinabr:after {
+        -webkit-transform-origin: 100% 100%;
+        transform-origin: 100% 100%
+    }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) and (-webkit-max-device-pixel-ratio: 2.99) {
+    .retinabt:before, .retinabb:after {
+        -webkit-transform: scaleY(.5);
+        transform: scaleY(.5)
+    }
+    .retinabl:before, .retinabr:after {
+        -webkit-transform: scaleX(.5);
+        transform: scaleX(.5)
+    }
+    .retinab:after {
+        width: 200%;
+        height: 200%;
+        -webkit-transform: scale(.5);
+        transform: scale(.5)
+    }
+    .retinabt:before, .retinabl:before, .retinab:after {
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0
+    }
+    .retinabb:after, .retinabr:after {
+        -webkit-transform-origin: 100% 100%;
+        transform-origin: 100% 100%
+    }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 1.99) {
+    .retinabt:before, .retinabb:after {
+        -webkit-transform: scaleY(.6667);
+        transform: scaleY(.6667)
+    }
+    .retinabl:before, .retinabr:after {
+        -webkit-transform: scaleX(.6667);
+        transform: scaleX(.6667)
+    }
+    .retinab:after {
+        width: 150%;
+        height: 150%;
+        -webkit-transform: scale(.6667);
+        transform: scale(.6667)
+    }
+    .retinabt:before, .retinabl:before, .retinab:after {
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0
+    }
+    .retinabb:after, .retinabr:after {
+        -webkit-transform-origin: 100% 100%;
+        transform-origin: 100% 100%
+    }
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta http-equiv=Access-Control-Allow-Origin content=*><meta name=viewport content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"><meta http-equiv=Access-Control-Allow-Origin content=*><link rel=icon href=favicon.ico><title></title><script src=js/md5.js></script><link rel=stylesheet href=css/base.css><script>(function(doc, win) {
+    document.addEventListener("DOMContentLoaded",function(){
+    // 淘宝响应式多写了下面这2句，修改viewport
+    let scale = 1 / window.devicePixelRatio;
+    document.querySelector('meta[name="viewport"]').setAttribute('content','width=device-width, initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no'); 
+    // // 淘宝+网易响应式都需要的修改font-size
+      setTimeout(() => {
+           recalc();
+      }, 200);
+  },false)
+          var  docEl = document.documentElement,
+          resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+          recalc = function(){
+          var clientWidth = docEl.clientWidth;
+          var screenWidth = docEl.clientWidth; //窗口宽度
+          var screenHeight = docEl.clientHeight; //窗口高度
+         
+          if (!screenWidth) return;
+          docEl.style.fontSize = 100 * (screenWidth / 750) + 'px';
+
+          var sUserAgent = navigator.userAgent.toLowerCase();
+          var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+          var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+          var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+          var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+          var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+          var bIsAndroid = sUserAgent.match(/android/i) == "android";
+          var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+          var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+          if (bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+            console.log(1999)
+          } else if (bIsIpad) {
+            docEl.style.fontSize = 90 + 'px';
+          } else {
+            //如果是pc
+            docEl.style.fontSize = 50 + 'px';
+          }
+        };
+      if (!document.addEventListener) return;
+      window.addEventListener(resizeEvt, recalc, false);
+    })(document, window);</script><link href=assets/css/chunk-04535d44.4a58f7bd.css rel=prefetch><link href=assets/css/chunk-06e9004d.9831fbad.css rel=prefetch><link href=assets/css/chunk-0a23f750.cda3c02d.css rel=prefetch><link href=assets/css/chunk-0c079afb.6dc7f076.css rel=prefetch><link href=assets/css/chunk-102c50a2.6bda75fc.css rel=prefetch><link href=assets/css/chunk-1824ef0e.739494cd.css rel=prefetch><link href=assets/css/chunk-1862d478.648d1652.css rel=prefetch><link href=assets/css/chunk-1b4c8e65.b40e7d7b.css rel=prefetch><link href=assets/css/chunk-1d0b3149.e0458a2e.css rel=prefetch><link href=assets/css/chunk-1d5a2fca.49497273.css rel=prefetch><link href=assets/css/chunk-1e7eca66.f3e1d74a.css rel=prefetch><link href=assets/css/chunk-254bc746.1067d071.css rel=prefetch><link href=assets/css/chunk-264c0b3a.08e80eaa.css rel=prefetch><link href=assets/css/chunk-33c6f4d2.478f6fed.css rel=prefetch><link href=assets/css/chunk-39d5170a.839a7e82.css rel=prefetch><link href=assets/css/chunk-3b1c0a44.1c39be39.css rel=prefetch><link href=assets/css/chunk-3fe0b0df.66b04fb2.css rel=prefetch><link href=assets/css/chunk-40779a78.a43c1533.css rel=prefetch><link href=assets/css/chunk-4cc1fcdd.4aea1327.css rel=prefetch><link href=assets/css/chunk-5c1d640c.a7a35a3b.css rel=prefetch><link href=assets/css/chunk-62472892.24b768bb.css rel=prefetch><link href=assets/css/chunk-68982821.dfe1704c.css rel=prefetch><link href=assets/css/chunk-6c1463e8.b76bcbb4.css rel=prefetch><link href=assets/css/chunk-6efcc0a9.42f24af6.css rel=prefetch><link href=assets/css/chunk-6efd1eb3.d6f37668.css rel=prefetch><link href=assets/css/chunk-7090f296.41ec0a5c.css rel=prefetch><link href=assets/css/chunk-7667a1ba.88ad4eb8.css rel=prefetch><link href=assets/css/chunk-78be6ca5.647fad4a.css rel=prefetch><link href=assets/css/chunk-79e32741.4e466e96.css rel=prefetch><link href=assets/css/chunk-a0a124ce.85a23de6.css rel=prefetch><link href=assets/css/chunk-a60da6ce.c375b163.css rel=prefetch><link href=assets/css/chunk-a61bfda0.2d793c85.css rel=prefetch><link href=assets/css/chunk-c3457afa.0f8ad976.css rel=prefetch><link href=assets/css/chunk-dafa5578.5ce16981.css rel=prefetch><link href=assets/css/chunk-deeb38fe.df3ce7d6.css rel=prefetch><link href=assets/css/chunk-e52da7f6.a734fea8.css rel=prefetch><link href=assets/css/chunk-f05070e2.bf610288.css rel=prefetch><link href=assets/css/chunk-fae2c016.ceca5a54.css rel=prefetch><link href=assets/js/chunk-04535d44.efb32421.js rel=prefetch><link href=assets/js/chunk-054e28b0.9adb17b7.js rel=prefetch><link href=assets/js/chunk-06e9004d.918784d1.js rel=prefetch><link href=assets/js/chunk-0a23f750.7757220c.js rel=prefetch><link href=assets/js/chunk-0c079afb.e7bf06e4.js rel=prefetch><link href=assets/js/chunk-102c50a2.b127bdf5.js rel=prefetch><link href=assets/js/chunk-1824ef0e.66c3b718.js rel=prefetch><link href=assets/js/chunk-1862d478.19850ed8.js rel=prefetch><link href=assets/js/chunk-1b4c8e65.151ac5c7.js rel=prefetch><link href=assets/js/chunk-1d0b3149.c0e488e6.js rel=prefetch><link href=assets/js/chunk-1d5a2fca.8fa89690.js rel=prefetch><link href=assets/js/chunk-1e7eca66.6a647faa.js rel=prefetch><link href=assets/js/chunk-254bc746.f19b601a.js rel=prefetch><link href=assets/js/chunk-264c0b3a.bf887a3f.js rel=prefetch><link href=assets/js/chunk-2d216257.5efeb4e6.js rel=prefetch><link href=assets/js/chunk-33c6f4d2.5c6a3381.js rel=prefetch><link href=assets/js/chunk-39d5170a.7294b05f.js rel=prefetch><link href=assets/js/chunk-3b1c0a44.a113c9dd.js rel=prefetch><link href=assets/js/chunk-3fe0b0df.c79d7252.js rel=prefetch><link href=assets/js/chunk-40779a78.23e4e2cb.js rel=prefetch><link href=assets/js/chunk-4cc1fcdd.6e8306f3.js rel=prefetch><link href=assets/js/chunk-5c1d640c.afc20ed0.js rel=prefetch><link href=assets/js/chunk-62472892.ec2c878a.js rel=prefetch><link href=assets/js/chunk-68982821.c8c2e6ab.js rel=prefetch><link href=assets/js/chunk-6c1463e8.ee236545.js rel=prefetch><link href=assets/js/chunk-6efcc0a9.10d62ea0.js rel=prefetch><link href=assets/js/chunk-6efd1eb3.d039e3c2.js rel=prefetch><link href=assets/js/chunk-7090f296.b77aff7c.js rel=prefetch><link href=assets/js/chunk-7667a1ba.d897647f.js rel=prefetch><link href=assets/js/chunk-78be6ca5.a5f82590.js rel=prefetch><link href=assets/js/chunk-79e32741.a1a09b64.js rel=prefetch><link href=assets/js/chunk-a0a124ce.f311b80e.js rel=prefetch><link href=assets/js/chunk-a60da6ce.18a6e7f2.js rel=prefetch><link href=assets/js/chunk-a61bfda0.b844d56d.js rel=prefetch><link href=assets/js/chunk-c3457afa.32897f6a.js rel=prefetch><link href=assets/js/chunk-dafa5578.7b77021b.js rel=prefetch><link href=assets/js/chunk-deeb38fe.29ac8ff2.js rel=prefetch><link href=assets/js/chunk-e52da7f6.4cb50e1f.js rel=prefetch><link href=assets/js/chunk-f05070e2.22e68dba.js rel=prefetch><link href=assets/js/chunk-fae2c016.2eb4d790.js rel=prefetch><link href=assets/css/app.510f7bec.css rel=preload as=style><link href=assets/css/chunk-vendors.30691e9e.css rel=preload as=style><link href=assets/js/app.9435e88b.js rel=preload as=script><link href=assets/js/chunk-vendors.2591fd60.js rel=preload as=script><link href=assets/css/chunk-vendors.30691e9e.css rel=stylesheet><link href=assets/css/app.510f7bec.css rel=stylesheet></head><body><noscript><strong>We're sorry but gzh doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id=app></div><script src=assets/js/chunk-vendors.2591fd60.js></script><script src=assets/js/app.9435e88b.js></script></body></html>

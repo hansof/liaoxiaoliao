@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*" />
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title></title>
+    <script src="js/md5.js"></script>
+    <link rel="stylesheet" href="css/base.css" />
+    <!-- <script type="text/javascript">
+			(function(doc, win) {
+				var docEl = doc.documentElement,
+					resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+					recalc = function() {
+						var clientWidth = docEl.clientWidth;
+						if(!clientWidth) return;
+						docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+					};
+				if(!doc.addEventListener) return;
+				win.addEventListener(resizeEvt, recalc, false);
+				recalc();
+			})(document, window);
+        </script> -->
+<script>
+ 
+	(function(doc, win) {
+    document.addEventListener("DOMContentLoaded",function(){
+    // 淘宝响应式多写了下面这2句，修改viewport
+    let scale = 1 / window.devicePixelRatio;
+    document.querySelector('meta[name="viewport"]').setAttribute('content','width=device-width, initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no'); 
+    // // 淘宝+网易响应式都需要的修改font-size
+      setTimeout(() => {
+           recalc();
+      }, 200);
+  },false)
+          var  docEl = document.documentElement,
+          resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+          recalc = function(){
+          var clientWidth = docEl.clientWidth;
+          var screenWidth = docEl.clientWidth; //窗口宽度
+          var screenHeight = docEl.clientHeight; //窗口高度
+         
+          if (!screenWidth) return;
+          docEl.style.fontSize = 100 * (screenWidth / 750) + 'px';
+
+          var sUserAgent = navigator.userAgent.toLowerCase();
+          var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+          var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+          var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+          var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+          var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+          var bIsAndroid = sUserAgent.match(/android/i) == "android";
+          var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+          var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+          if (bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+            console.log(1999)
+          } else if (bIsIpad) {
+            docEl.style.fontSize = 90 + 'px';
+          } else {
+            //如果是pc
+            docEl.style.fontSize = 50 + 'px';
+          }
+        };
+      if (!document.addEventListener) return;
+      window.addEventListener(resizeEvt, recalc, false);
+    })(document, window);
+</script>
+
+
+
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but gzh doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
